@@ -1,0 +1,28 @@
+# --- Terraform ---
+# Stan zawiera atrybuty zasobów (potencjalnie sekrety) — NIGDY do repo
+*.tfstate
+*.tfstate.*
+.terraform/
+# UWAGA: .terraform.lock.hcl celowo NIE jest ignorowany — commitujemy go (lockfile wersji providerów)
+# Wartości zmiennych (ID projektu, potencjalne sekrety) — lokalne, w repo tylko .tfvars.example
+*.tfvars
+!*.tfvars.example
+
+# --- Credentials GCP ---
+*credentials*.json
+*service-account*.json
+*-sa-key.json
+
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- Dataform ---
+node_modules/
+.df-credentials.json
+
+# --- IDE / OS ---
+.vscode/
+Thumbs.db
